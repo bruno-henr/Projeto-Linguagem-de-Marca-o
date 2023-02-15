@@ -2,6 +2,6 @@
 Projeto de um website para disciplina de linguagem de marcação - ADS 2023
 
 # Equipe:
-Bruno Henrique
-Maria Alyce
-Ray da silva
+Bruno Henrique\n
+Maria Alyce\n
+Ray da silva\n
