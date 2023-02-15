@@ -1,4 +1,3 @@
-
 document.getElementById("toggle-menu").addEventListener("click", function() {
     var sidebar_class_value = document.getElementById("sidebar").className.split(" ");
     if(sidebar_class_value.includes('active-sidebar')) {
