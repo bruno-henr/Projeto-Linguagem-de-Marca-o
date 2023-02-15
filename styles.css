@@ -11,6 +11,16 @@ body {
    
 }
 
+@keyframes scaleIn {
+    from {
+      transform: scale(0);
+    }
+  
+    to {
+        transform: scale(1);
+    }
+  }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -255,6 +265,29 @@ button {
     display: flex;
     margin-bottom: 2rem;
     align-items: center;
+    filter: blur(0px);
+}
+.show {
+    opacity: 1 !important;
+    animation: scaleIn .3s;
+}
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.container-persons .show {
+    opacity: 1 !important;
+    animation: scaleIn .3s;
+}
+.container-persons .hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.container-persons .active-item {
+    display: flex;
+    transition: 1s ease-in-out;
 }
 
 .container-persons .person-item .person-infos {
@@ -272,6 +305,7 @@ button {
     flex-direction: column;
 }
 .body-info-seasons h3 {
+    color: #ffffff;
     margin: 0 auto;
     margin-bottom: 2rem;
 }
@@ -283,20 +317,34 @@ button {
 }
 .body-info-memes h3 {
     margin: 0 auto;
+    color: #fff;
     margin-bottom: 2rem;
 }
 .body-info-memes .container-memes {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
     padding: 1rem;
 }
 .body-info-memes .container-memes img {
-    width: 100%;
+    width: 80%;
 }
 
 /* styles curiosidades */
 
+.body-info-curiosities {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    color: #fff !important;
+    text-align: justify;
+}
+.body-info-curiosities > #title {
+    color: #fff !important;
+}
 .body-info-curiosities h3 {
     display: flex;
     justify-content: center;
@@ -305,14 +353,6 @@ button {
 .body-info-curiosities > p  span {
     display: block;
     margin-bottom: 1rem;
-}
-.body-info-curiosities {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    color: #fff;
-    text-align: justify;
 }
 .img-item {
     display: flex;  
@@ -348,6 +388,13 @@ button {
     justify-content: center;
     padding: 1rem;
     color: #fff;
+}
+.body-whereWatch h3 {
+    margin-bottom: 2rem;
+}
+.body-whereWatch label {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 .container-plataform {
     display: flex;
@@ -399,6 +446,9 @@ button {
     }
 }
 @media (max-width: 714px) {
+    .container-videos .video-item iframe {
+        width: 500px;
+    }
     .container-header #header-menu-sidebar {
         display: flex;
     }
@@ -446,3 +496,17 @@ button {
     }
     
   }
+  @media (max-width: 600px) {
+    .container-videos .video-item iframe {
+        width: 400px;
+    }
+    .body {
+        top: -20rem;
+    }
+    #body-seasons {
+        width: 100%;
+    }
+    .container-persons .person-item {
+        flex-direction: column;
+    }
+}
