@@ -11,6 +11,16 @@ body {
    
 }
 
+@keyframes scaleIn {
+    from {
+      transform: scale(0);
+    }
+  
+    to {
+        transform: scale(1);
+    }
+  }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -239,6 +249,29 @@ button {
     display: flex;
     margin-bottom: 2rem;
     align-items: center;
+    filter: blur(0px);
+}
+.show {
+    opacity: 1 !important;
+    animation: scaleIn .3s;
+}
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.container-persons .show {
+    opacity: 1 !important;
+    animation: scaleIn .3s;
+}
+.container-persons .hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.container-persons .active-item {
+    display: flex;
+    transition: 1s ease-in-out;
 }
 
 .container-persons .person-item .person-infos {
@@ -274,11 +307,13 @@ button {
 .body-info-memes .container-memes {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
     padding: 1rem;
 }
 .body-info-memes .container-memes img {
-    width: 100%;
+    width: 80%;
 }
 
 /* styles curiosidades */
